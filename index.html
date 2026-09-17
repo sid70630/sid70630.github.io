@@ -4,85 +4,119 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Siddharth Doshi, PhD researcher in nuclear physics at the University of Brighton.">
-  <title>Siddharth Doshi</title>
+  <meta name="theme-color" content="#f5f9fd">
+  <title>Siddharth Doshi | Nuclear Physics</title>
   <style>
-    :root { --text:#202833; --muted:#5b6874; --line:#dfe4e8; --link:#155d82; }
+    :root { --blue:#276ad5; --ink:#253041; --muted:#657080; --bg:#f5f9fd; --line:#dce5ef; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { margin:0; background:#fff; color:var(--text); font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
-    a { color:var(--link); text-underline-offset:3px; }
-    a:hover { color:#0b3f5b; }
-    a:focus-visible { outline:2px solid var(--link); outline-offset:3px; }
-    .container { width:min(850px,calc(100% - 40px)); margin:0 auto; }
-    header { border-bottom:1px solid var(--line); }
-    header .container { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:18px 0; }
-    .brand { font-weight:700; color:var(--text); text-decoration:none; white-space:nowrap; }
-    nav { display:flex; flex-wrap:wrap; gap:8px 20px; font-size:.9rem; }
-    nav a { color:var(--muted); text-decoration:none; }
-    nav a:hover { color:var(--link); }
-    main { padding:75px 0 85px; }
-    h1 { font-size:clamp(2.5rem,6vw,3.5rem); line-height:1.14; letter-spacing:-.04em; margin:0 0 8px; }
-    .role { color:var(--muted); font-size:1.12rem; margin:0 0 32px; }
-    .intro { font-size:1.1rem; max-width:720px; margin-bottom:20px; }
-    section { padding-top:34px; margin-top:42px; border-top:1px solid var(--line); scroll-margin-top:20px; }
-    h2 { font-size:1.45rem; line-height:1.3; margin:0 0 17px; }
-    h3 { font-size:1.02rem; margin:0 0 4px; }
-    p { margin:0 0 15px; }
-    ul { padding-left:22px; margin:0; }
-    li { margin-bottom:13px; }
-    .detail { color:var(--muted); font-size:.94rem; }
-    .publication-list { list-style:none; padding:0; }
-    .publication-list li { margin-bottom:20px; }
-    .publication-list span { display:block; color:var(--muted); font-size:.92rem; margin-top:3px; }
-    footer { border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; padding:22px 0; }
-    @media(max-width:600px) { header .container { align-items:flex-start; flex-direction:column; gap:8px; } main { padding-top:48px; } }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:var(--blue); text-underline-offset:3px; }
+    a:hover { color:#174b9f; }
+    a:focus-visible { outline:3px solid var(--blue); outline-offset:4px; }
+    .wrap { width:min(1050px,calc(100% - 48px)); margin:auto; }
+    header { background:rgba(255,255,255,.85); border-bottom:1px solid var(--line); }
+    .nav { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+    .brand { color:var(--ink); text-decoration:none; font-weight:700; white-space:nowrap; }
+    nav { display:flex; gap:8px 24px; flex-wrap:wrap; }
+    nav a { color:#455063; text-decoration:none; font-size:.91rem; font-weight:600; }
+    nav a:hover { color:var(--blue); }
+    .hero { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(220px,.65fr); align-items:center; gap:50px; padding:92px 0 96px; }
+    .hello { color:var(--muted); margin:0 0 6px; }
+    h1 { font-size:clamp(3.2rem,6.7vw,5.5rem); line-height:1.06; letter-spacing:-.055em; color:var(--blue); margin:0 0 16px; }
+    .role { font-size:clamp(1.5rem,3vw,2.25rem); line-height:1.28; letter-spacing:-.035em; color:#586473; font-weight:650; margin:0 0 25px; }
+    .hero p.summary { max-width:650px; font-size:1.08rem; line-height:1.65; margin-bottom:25px; }
+    .links { display:flex; gap:10px; flex-wrap:wrap; }
+    .links a { display:inline-block; padding:9px 16px; border:1px solid #94b6ed; border-radius:6px; text-decoration:none; font-weight:650; font-size:.92rem; }
+    .links a:first-child { background:var(--blue); color:#fff; border-color:var(--blue); }
+    .links a:hover { background:#dceaff; color:#174b9f; }
+    .portrait { justify-self:center; width:min(250px,100%); aspect-ratio:1; border-radius:14px; object-fit:cover; background:#e7edf4; border:3px solid #fff; box-shadow:0 12px 35px #2f5b8b22; }
+    section { padding:68px 0; border-top:1px solid var(--line); scroll-margin-top:25px; }
+    h2 { font-size:clamp(1.9rem,3.2vw,2.5rem); line-height:1.2; letter-spacing:-.035em; margin:0 0 24px; }
+    h3 { font-size:1.08rem; line-height:1.35; margin:0 0 4px; }
+    p { margin:0 0 16px; }
+    .columns { display:grid; grid-template-columns:230px 1fr; gap:42px; }
+    .columns h2 { margin:0; }
+    .content { max-width:740px; }
+    .content > :last-child { margin-bottom:0; }
+    .detail { color:var(--muted); font-size:.92rem; }
+    .entries { list-style:none; padding:0; margin:0; }
+    .entries li { padding:0 0 19px; margin-bottom:19px; border-bottom:1px solid var(--line); }
+    .entries li:last-child { margin:0; padding:0; border:0; }
+    .entries p { margin:5px 0 0; }
+    .papers { list-style:none; padding:0; margin:0; }
+    .papers li { margin-bottom:22px; }
+    .papers li:last-child { margin-bottom:0; }
+    .papers a { font-weight:650; }
+    .papers span { display:block; margin-top:3px; color:var(--muted); font-size:.91rem; }
+    .tools { color:var(--muted); }
+    footer { border-top:1px solid var(--line); padding:26px 0; color:var(--muted); font-size:.85rem; }
+    @media(max-width:740px) { .nav { align-items:flex-start; flex-direction:column; padding:18px 0; gap:9px; } .hero { grid-template-columns:1fr; padding:55px 0 65px; gap:25px; } .portrait { justify-self:start; width:160px; grid-row:1; } .columns { grid-template-columns:1fr; gap:9px; } section { padding:48px 0; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
   </style>
 </head>
 <body>
-  <header><div class="container">
+  <header><div class="wrap nav">
     <a class="brand" href="#top">Siddharth Doshi</a>
     <nav aria-label="Main navigation">
-      <a href="#research">Research</a><a href="#experience">Experience</a><a href="#publications">Publications</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#research">Research</a><a href="#experience">Experience</a><a href="#publications">Publications</a>
     </nav>
   </div></header>
-  <main class="container" id="top">
-    <h1>Siddharth Doshi</h1>
-    <p class="role">PhD researcher in nuclear physics · University of Brighton</p>
-    <p class="intro">I study the structure of neutron-rich nuclei through β–γ spectroscopy, lifetime measurements and isomeric states.</p>
-    <p>My PhD research focuses on neutron-rich hafnium and tantalum isotopes studied at KISS, RIKEN. I also analyse storage-ring data from GSI for mass and half-life measurements. My work combines experimental data analysis with nuclear-structure interpretation.</p>
+  <main class="wrap" id="top">
+    <div class="hero">
+      <div>
+        <p class="hello">Hi, I'm</p>
+        <h1>Siddharth Doshi.</h1>
+        <p class="role">PhD researcher in nuclear physics<br>at the University of Brighton</p>
+        <p class="summary">I study the structure of neutron-rich nuclei through β–γ spectroscopy, lifetime measurements and isomeric states.</p>
+        <div class="links"><a href="https://orcid.org/0009-0007-5230-6254">ORCID</a><a href="https://github.com/sid70630">GitHub</a></div>
+      </div>
+      <img class="portrait" src="https://avatars.githubusercontent.com/u/135835142?v=4" alt="Siddharth Doshi's GitHub profile photo">
+    </div>
 
-    <section id="research">
+    <section id="about" class="columns">
+      <h2>About</h2>
+      <div class="content">
+        <p>My PhD research focuses on neutron-rich hafnium and tantalum isotopes studied at KISS, RIKEN. I analyse decay and timing data to investigate isomeric states and the structure of low-lying nuclear levels.</p>
+        <p>I also work with storage-ring data from GSI for mass and half-life measurements, and have contributed to nuclear-physics experiments at several international facilities.</p>
+      </div>
+    </section>
+
+    <section id="research" class="columns">
       <h2>Research</h2>
-      <p>At KISS, I analyse decay and timing data to identify delayed γ-ray transitions and isomeric states in neutron-rich nuclei. My first-author paper reports evidence for a π1/2⁺[411] isomeric state in ¹⁸³Ta with a half-life of 41<sup>+6</sup><sub>−4</sub> μs.</p>
-      <p>For storage-ring data from GSI, I develop Python workflows for particle identification, frequency-spectrum analysis and multi-parameter fitting. I use ROOT, Radware, Python and C++ in my spectroscopy and analysis work.</p>
+      <div class="content">
+        <h3>Decay spectroscopy and isomers</h3>
+        <p>Using β–γ timing correlations and γ-ray spectroscopy, I study delayed transitions in neutron-rich hafnium and tantalum. My first-author paper reports evidence for a π1/2⁺[411] isomeric state in ¹⁸³Ta with a half-life of 41<sup>+6</sup><sub>−4</sub> μs.</p>
+        <h3>Storage-ring analysis</h3>
+        <p>I develop Python workflows for event-by-event data, particle identification, frequency-spectrum analysis and multi-parameter fitting for mass and half-life studies.</p>
+        <p class="tools">Tools: Python, ROOT, Radware, C++, Linux and LaTeX.</p>
+      </div>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="columns">
       <h2>Experience</h2>
-      <ul>
-        <li><strong>PhD research student, University of Brighton</strong><br><span class="detail">2023–present · β–γ spectroscopy of neutron-rich hafnium and tantalum isotopes.</span></li>
-        <li><strong>HISPEC/DESPEC attachment, GSI</strong><br><span class="detail">2025 · Six months working with DEGAS germanium detectors and BPlast plastic scintillators.</span></li>
-        <li><strong>Experimental collaborations</strong><br><span class="detail">Contributions to experiments at KISS, ISOLDE, GSI, IFIN-HH and the University of Jyväskylä.</span></li>
-      </ul>
+      <div class="content">
+        <ul class="entries">
+          <li><h3>PhD research student · University of Brighton</h3><span class="detail">2023–present</span><p>β–γ spectroscopy of isomeric and ground states in neutron-rich hafnium and tantalum isotopes.</p></li>
+          <li><h3>HISPEC/DESPEC long-term attachment · GSI</h3><span class="detail">2025</span><p>Six months working with DEGAS germanium detectors and BPlast plastic scintillators, including assembly, testing and experimental preparation.</p></li>
+          <li><h3>Experimental collaborations</h3><p>Contributions to experiments at KISS, ISOLDE, GSI, IFIN-HH and the University of Jyväskylä.</p></li>
+        </ul>
+      </div>
     </section>
 
-    <section id="publications">
+    <section id="publications" class="columns">
       <h2>Selected publications</h2>
-      <ul class="publication-list">
-        <li><a href="https://doi.org/10.1140/epja/s10050-025-01776-2">Evidence for an isomeric π1/2⁺[411] state in ¹⁸³Ta</a><span>S. Doshi et al. · European Physical Journal A 62, 17 (2026)</span></li>
-        <li><a href="https://arxiv.org/abs/2607.10894">Precision masses of neutron-rich platinum and gold nuclei reveal enhanced N=126 shell strength below doubly-magic ²⁰⁸Pb</a><span>D. Freire-Fernández et al. · 2026</span></li>
-        <li><a href="https://doi.org/10.3390/atoms14080063">First Direct Mass Measurement of ¹⁸⁴Ta and Surrounding Nuclei</a><span>J. M. Yap et al. · Atoms (2026)</span></li>
-        <li><a href="https://doi.org/10.1103/PhysRevC.112.064302">Probing the quantum phase transition near N≈60 via mass measurements of technetium isotopes</a><span>J. Ruotsalainen et al. · Physical Review C 112, 064302 (2025)</span></li>
-      </ul>
-      <p><a href="https://orcid.org/0009-0007-5230-6254">Full publication record on ORCID</a></p>
-    </section>
-
-    <section id="contact">
-      <h2>Links</h2>
-      <p><a href="https://github.com/sid70630">GitHub</a> · <a href="https://orcid.org/0009-0007-5230-6254">ORCID</a></p>
+      <div class="content">
+        <ul class="papers">
+          <li><a href="https://doi.org/10.1140/epja/s10050-025-01776-2">Evidence for an isomeric π1/2⁺[411] state in ¹⁸³Ta</a><span>S. Doshi et al. · European Physical Journal A 62, 17 (2026)</span></li>
+          <li><a href="https://arxiv.org/abs/2607.10894">Precision masses of neutron-rich platinum and gold nuclei reveal enhanced N=126 shell strength below doubly-magic ²⁰⁸Pb</a><span>D. Freire-Fernández et al. · 2026</span></li>
+          <li><a href="https://doi.org/10.3390/atoms14080063">First Direct Mass Measurement of ¹⁸⁴Ta and Surrounding Nuclei</a><span>J. M. Yap et al. · Atoms (2026)</span></li>
+          <li><a href="https://doi.org/10.1103/PhysRevC.112.064302">Probing the quantum phase transition near N≈60 via mass measurements of technetium isotopes</a><span>J. Ruotsalainen et al. · Physical Review C 112, 064302 (2025)</span></li>
+        </ul>
+        <p><a href="https://orcid.org/0009-0007-5230-6254">More publications on ORCID</a></p>
+      </div>
     </section>
   </main>
-  <footer><div class="container">© Siddharth Doshi</div></footer>
+  <footer><div class="wrap">© Siddharth Doshi · <a href="https://github.com/sid70630">GitHub</a> · <a href="https://orcid.org/0009-0007-5230-6254">ORCID</a></div></footer>
 </body>
 </html>
