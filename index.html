@@ -146,7 +146,7 @@
   <script>
     (() => {
       const list = document.getElementById("publication-list");
-      const existing = new Set([...list.querySelectorAll("[data-doi]")].map(li => li.dataset.doi.toLowerCase()));
+      const existing = new Set([...list.querySelectorAll("[data-doi]")].map(li => li.dataset.doi.toLowerCase()).concat(["10.1103/kksz-prtb"]));
       const endpoint = "https://api.crossref.org/works?filter=orcid:0009-0007-5230-6254&select=DOI,title,author,container-title,published-print,published-online,issued&rows=100";
       const esc = value => String(value || "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
       const cleanTitle = (raw, doi) => {
